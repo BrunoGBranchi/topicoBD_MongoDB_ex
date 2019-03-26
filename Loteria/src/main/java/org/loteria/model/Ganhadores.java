@@ -35,13 +35,14 @@ public class Ganhadores {
 		this.qtd_acertos = qtd_acertos;
 	}
 
-	public Ganhadores(Long codigo, String nome, int qtd_acertos) {
+	public Ganhadores(Long codigo, String nome, int numeros, int qtd_acertos) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
 		this.qtd_acertos = qtd_acertos;
 	}
-	
+
+		
 	
 	
 }

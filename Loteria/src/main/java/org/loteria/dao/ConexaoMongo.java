@@ -37,7 +37,7 @@ public class ConexaoMongo {
 
 		MongoClientSettings settings = MongoClientSettings.builder().codecRegistry(pojoCodecRegistry).build();
 		mongoClient = MongoClients.create(settings);
-		database = mongoClient.getDatabase("aula1");
+		database = mongoClient.getDatabase("trabalho");
 	}
 	
 	public static MongoDatabase getDatabase(){
