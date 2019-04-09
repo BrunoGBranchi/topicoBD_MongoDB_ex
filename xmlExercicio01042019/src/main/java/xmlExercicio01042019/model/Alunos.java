@@ -10,7 +10,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Alunos {
 	@XmlElement(name = "aluno")
 	private List<Aluno> alunos;
-
+	
+	public Double getMedia() {
+		return alunos.stream().mapToDouble(Aluno::getMedia).average().orElse(0.0);
+	}
+	
 	public List<Aluno> getAlunos() {
 		return alunos;
 	}

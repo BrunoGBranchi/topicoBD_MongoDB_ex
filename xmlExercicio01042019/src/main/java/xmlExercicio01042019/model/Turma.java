@@ -22,15 +22,15 @@ public class Turma {
 	public String getNome() {
 		return nome;
 	}
-
+	
+	public Double getMedia() {
+		return alunos.getMedia();
+	}
+	
 	public Alunos getAlunos() {
 		return alunos;
 	}
-
-	public Double getMedia() {
-		return media;
-	}
-
+	
 	public Set<Disciplina> getDisciplinas() {
 		return disciplinas;
 	}

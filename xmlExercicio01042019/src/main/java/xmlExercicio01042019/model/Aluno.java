@@ -12,12 +12,6 @@ public class Aluno {
 	@XmlElement
 	private Disciplinas disciplinas;
 
-	private Double media;
-
-	public void setMedia(Double media) {
-		this.media = media;
-	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -27,14 +21,13 @@ public class Aluno {
 	}
 
 	public Double getMedia() {
-		return media;
+		return disciplinas.getMedia();
 	}
 
-	public Aluno(String nome, Disciplinas disciplinas, Double media) {
+	public Aluno(String nome, Disciplinas disciplinas) {
 		super();
 		this.nome = nome;
 		this.disciplinas = disciplinas;
-		this.media = media;
 	}
 
 	public Aluno() {

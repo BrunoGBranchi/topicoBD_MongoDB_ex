@@ -11,26 +11,30 @@ public class Main {
 	public static void main(String[] args) {
 
 		ConverterXML<Turma> conversor = new ConverterXML<>(Turma.class);
-		int n = 2;
-		double[] v = new double[n];
-		int i;
 		Turma turma = conversor.gerarObj(new File("exercicio.xml"));
-		Double soma = 0.0;
+		System.out.println(turma.getMedia());
+		System.out.println();
 		for (Aluno aluno : turma.getAlunos().getAlunos()) {
-			System.out.println(aluno.getNome());
-			for (Disciplina disciplina : aluno.getDisciplinas().getDisciplina()) {
-				for (i=0; i<n; i++) {
-				      System.out.printf("", (i+1), n);
-				      v[i] = disciplina.getNota();
-				      soma = soma+v[i];
-				      
-				    }
-				System.out.println(soma/2);
+				System.out.println("Media do aluno "+ aluno.getNome() +": "+aluno.getMedia());
 			}
 			
-			
 		}
+	
+	public static Double mediaDisciplina(Turma turma, Long Codigo) {
+		Double soma = 0.0;
+		int contador = 0;
+		for(Aluno aluno : turma.getAlunos().getAlunos()) {
+			for(Disciplina disciplina : aluno.getDisciplinas().getDisciplina()) {
+				if(disciplina.getCodigo().equals(Codigo)) {
+					soma += disciplina.getNota();
+					contador ++;
+				}
+			}
+		}
+		return soma/contador;
+		
+	}
 		
 	}
 
-}
+
